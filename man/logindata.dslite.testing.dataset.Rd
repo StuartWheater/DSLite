@@ -3,8 +3,21 @@
 \docType{data}
 \name{logindata.dslite.testing.dataset}
 \alias{logindata.dslite.testing.dataset}
-\title{Login data for the TESTING.DATASET simulated datasets}
+\title{DataSHIELD login data for the TESTING.DATASET simulated datasets}
 \description{
-Login data for the TESTING.DATASET simulated datasets
+DataSHIELD login data.frame for connecting with TESTING.DATASET datasets which purpose is to
+evaluate each base data types.
+}
+\details{
+\tabular{llll}{
+   \strong{Field} \tab \strong{Description} \tab \strong{Type} \tab \strong{Note} \cr
+   server \tab Server/study name \tab char \tab  \cr
+   url \tab Server/study URL \tab char \tab DSLiteServer instance symbol name \cr
+   user \tab User name \tab char \tab Always empty for DSLiteServer \cr
+   password \tab User password \tab char \tab Always empty for DSLiteServer \cr
+   table \tab Table unique name \tab char \tab As registered in the DSLiteServer \cr
+   options \tab Connection options \tab char \tab Always empty for DSLiteServer \cr
+   driver \tab Connection driver \tab char \tab DSLiteServer \cr
+}
 }
 \keyword{data}

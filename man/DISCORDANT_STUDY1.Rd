@@ -5,6 +5,13 @@
 \alias{DISCORDANT_STUDY1}
 \title{Simulated dataset DISCORDANT 1}
 \description{
-Simulated dataset DISCORDANT 1
+Simulated dataset DISCORDANT 1, in a data.frame with 12 observations of 2 discordant variables.
+}
+\details{
+\tabular{lll}{
+   \strong{Variable} \tab \strong{Description} \tab \strong{Type} \cr
+   A \tab Dummy data \tab integer \cr
+   B \tab Dummy data \tab integer \cr
+}
 }
 \keyword{data}

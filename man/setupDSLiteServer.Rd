@@ -4,8 +4,14 @@
 \alias{setupDSLiteServer}
 \title{Setup an environment based on named datasets and logindata}
 \usage{
-setupDSLiteServer(packages = c(), datasets, logindata, pkgs = NULL,
-  dslite.server = NULL, env = globalenv())
+setupDSLiteServer(
+  packages = c(),
+  datasets,
+  logindata,
+  pkgs = NULL,
+  dslite.server = NULL,
+  env = parent.frame()
+)
 }
 \arguments{
 \item{packages}{DataSHIELD server-side packages which local installation must be verified so that the \link{DSLiteServer}
@@ -32,11 +38,24 @@ Load the provided datasets and the corresponding logindata object, instanciate a
 hosting these datasets, verifies that the required DataSHIELD server-side packages are installed.
 All the data structures are loaded by \link{data} which supports various formats (see data() documentation).
 }
+\examples{
+{
+logindata <- setupDSLiteServer(
+                 datasets = c("CNSIM1", "CNSIM2", "CNSIM3"),
+                 logindata = "logindata.dslite.cnsim", pkgs = "DSLite",
+                 dslite.server = "dslite.server")
+conns <- datashield.login(logindata, assign=TRUE)
+# do DataSHIELD analysis
+datashield.logout(conns)
+}
+
+}
 \seealso{
-Other setup functions: \code{\link{setupCNSIMTest}},
-  \code{\link{setupDASIMTest}},
-  \code{\link{setupDATASETTest}},
-  \code{\link{setupDISCORDANTTest}},
-  \code{\link{setupSURVIVALTest}}
+Other setup functions: 
+\code{\link{setupCNSIMTest}()},
+\code{\link{setupDASIMTest}()},
+\code{\link{setupDATASETTest}()},
+\code{\link{setupDISCORDANTTest}()},
+\code{\link{setupSURVIVALTest}()}
 }
 \concept{setup functions}

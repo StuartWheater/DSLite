@@ -4,7 +4,7 @@
 \alias{setupCNSIMTest}
 \title{Setup a test environment based on the CNSIM simulated datasets}
 \usage{
-setupCNSIMTest(packages = c(), env = globalenv())
+setupCNSIMTest(packages = c(), env = parent.frame())
 }
 \arguments{
 \item{packages}{DataSHIELD server-side packages which local installation must be verified so that the \link{DSLiteServer}
@@ -20,11 +20,20 @@ The login data for the \link{datashield.login} function.
 Load the CNSIM datasets, the corresponding login data object, instanciate a new \link{DSLiteServer}
 hosting these datasets and verify that the required DataSHIELD server-side packages are installed.
 }
+\examples{
+{
+logindata <- setupCNSIMTest()
+conns <- datashield.login(logindata, assign=TRUE)
+# do DataSHIELD analysis
+datashield.logout(conns)
+}
+}
 \seealso{
-Other setup functions: \code{\link{setupDASIMTest}},
-  \code{\link{setupDATASETTest}},
-  \code{\link{setupDISCORDANTTest}},
-  \code{\link{setupDSLiteServer}},
-  \code{\link{setupSURVIVALTest}}
+Other setup functions: 
+\code{\link{setupDASIMTest}()},
+\code{\link{setupDATASETTest}()},
+\code{\link{setupDISCORDANTTest}()},
+\code{\link{setupDSLiteServer}()},
+\code{\link{setupSURVIVALTest}()}
 }
 \concept{setup functions}
